@@ -1,8 +1,15 @@
 # 北京浮生记 Web版
 
+[![在线演示](https://img.shields.io/badge/在线演示-立即游玩-00FFFF?style=for-the-badge&logo=cloudflare)](https://beijing-fushengji.pages.dev)
+[![GitHub](https://img.shields.io/badge/GitHub-源代码-FF00FF?style=for-the-badge&logo=github)](https://github.com/niletry/beijing_fushengji_web)
+
 ## 🎮 游戏介绍
 
 这是经典DOS游戏《北京浮生记》的现代Web复刻版本。在90年代的北京，通过倒卖商品、应对随机事件，积累财富，成为商业巨子！
+
+> **🌐 在线演示**: [https://beijing-fushengji.pages.dev](https://beijing-fushengji.pages.dev)  
+> *(部署完成后，请将上述链接替换为实际的 Cloudflare Pages URL)*
+
 
 ## ✨ 特色
 
