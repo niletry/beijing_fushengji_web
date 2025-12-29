@@ -1,0 +1,25 @@
+name = "beijing-fushengji-api"
+main = "worker/index.js"
+compatibility_date = "2024-01-01"
+
+# Cloudflare Workers 配置
+# 文档: https://developers.cloudflare.com/workers/
+
+# D1 数据库绑定
+# 部署前需要先创建 D1 数据库：
+# wrangler d1 create beijing-fushengji-rankings
+# 然后将下面的 database_id 替换为创建后返回的 ID
+
+[[d1_databases]]
+binding = "DB"  # 在代码中通过 env.DB 访问
+database_name = "beijing-fushengji-rankings"
+database_id = "YOUR_DATABASE_ID_HERE"  # ⚠️ 替换为你的数据库 ID
+
+# 可选：KV 命名空间（用于速率限制等）
+# [[kv_namespaces]]
+# binding = "KV"
+# id = "YOUR_KV_ID_HERE"
+
+# 可选：环境变量
+# [vars]
+# ENVIRONMENT = "production"
