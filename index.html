@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>北京浮生记 - 复古经典模拟经营游戏</title>
+    <meta name="description" content="经典模拟经营游戏北京浮生记Web版，体验90年代北京的商业传奇">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Orbitron:wght@500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=17">
+</head>
+
+<body>
+    <!-- Background Effects -->
+    <div class="background-effects">
+        <div class="grid-overlay"></div>
+        <div class="glow-orbs">
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
+            <div class="orb orb-3"></div>
+        </div>
+    </div>
+
+    <!-- Main Game Container -->
+    <div id="gameContainer" class="game-container">
+
+        <!-- Start Screen -->
+        <div id="startScreen" class="screen active">
+            <div class="title-section">
+                <h1 class="game-title">
+                    <span class="title-main">北京浮生记</span>
+                    <span class="title-sub">Beijing Floating Life</span>
+                </h1>
+                <div class="title-decoration"></div>
+                <p class="game-tagline">在九十年代的北京，书写你的商业传奇</p>
+            </div>
+
+            <div class="start-menu">
+                <button class="menu-btn primary" id="newGameBtn">
+                    <span class="btn-icon">▶</span>
+                    <span class="btn-text">开始新游戏</span>
+                </button>
+                <button class="menu-btn" id="loadGameBtn">
+                    <span class="btn-icon">⟲</span>
+                    <span class="btn-text">读取存档</span>
+                </button>
+                <button class="menu-btn" id="rankingBtn">
+                    <span class="btn-icon">★</span>
+                    <span class="btn-text">财富排行榜</span>
+                </button>
+                <button class="menu-btn" id="aboutBtn">
+                    <span class="btn-icon">ⓘ</span>
+                    <span class="btn-text">关于游戏</span>
+                </button>
+            </div>
+
+            <div class="start-footer">
+                <p>Original by Guo Xianghao | Web Version 2025</p>
+            </div>
+        </div>
+
+        <!-- Game Setup Screen -->
+        <div id="setupScreen" class="screen">
+            <div class="setup-container">
+                <h2 class="screen-title">📖 你的故事</h2>
+                
+                <!-- Story Background -->
+                <div class="story-background">
+                    <div class="story-intro">
+                        <p class="story-highlight">
+                            你是一位来自<strong>福建的打工仔</strong>，今年刚刚<strong>23岁</strong>。
+                        </p>
+                        <p>
+                            一开始你只有<span class="money-highlight">¥2000</span>，还欠了一个叫<strong class="danger-text">黑狗</strong>的流氓头子<span
+                                class="debt-highlight">¥5500</span>债，这些债每天利息高达<strong class="danger-text">10%</strong>。
+                        </p>
+                        <p>
+                            你所在的时代，<strong>流氓横行</strong>在北京的大街小巷，<strong>黑市商品交易</strong>在北京的街头巷尾。你生活在北京的一个黑市中，经营着各种违禁商品，你要想办法<strong>还清债务</strong>，而且要登上<strong
+                                class="success-text">北京富豪排行榜</strong>。
+                        </p>
+                        <p>
+                            你只能在北京呆<strong>40天</strong>，每次搬到一个地点算一天。一开始你的房子只能放<strong>100个货物</strong>，你要在北京经历各种随机事件，你要小心<span
+                                class="danger-text">流氓、小偷、骗子</span>等等恶徒，你还要在北京生存下来。
+                        </p>
+                        <p class="story-final">
+                            你将在北京经营<strong>VCD、走私汽车、大麻</strong>及其他违禁品，同时经历各种<strong class="success-text">搞笑事件</strong>。
+                        </p>
+                    </div>
+                
+                    <div class="game-objectives">
+                        <h3>🎯 游戏目标</h3>
+                        <ul>
+                            <li>💰 还清黑狗的债务（¥5500 + 利息）</li>
+                            <li>🏆 登上北京富豪排行榜</li>
+                            <li>⏰ 在40天内积累最多财富</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="setup-form">
+                    <div class="form-group">
+                        <label for="playerName">👤 你的名字</label>
+                        <input type="text" id="playerName" maxlength="8" placeholder="输入你的名字" value="阿明">
+                    </div>
+
+                    <div class="form-group">
+                        <label>💵 难度选择</label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="initialMoney" value="2000" checked>
+                                <span>
+                                    <strong>经典模式</strong><br>
+                                    <small>¥2000 | 40天 | 原版体验</small>
+                                </span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="initialMoney" value="1000">
+                                <span>
+                                    <strong>困难模式</strong><br>
+                                    <small>¥1000 | 40天 | 挑战自我</small>
+                                </span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="initialMoney" value="3000">
+                                <span>
+                                    <strong>休闲模式</strong><br>
+                                    <small>¥3000 | 60天 | 轻松体验</small>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="btn-group">
+                    <button class="menu-btn" id="setupBackBtn">返回</button>
+                    <button class="menu-btn primary" id="startGameBtn">🚀 开始冒险</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Game Screen -->
+        <div id="gameScreen" class="screen">
+            <!-- Top Status Bar -->
+            <div class="status-bar">
+                <div class="status-item">
+                    <span class="status-label">姓名</span>
+                    <span class="status-value" id="playerNameDisplay">玩家</span>
+                </div>
+                <div class="status-item highlight">
+                    <span class="status-label">💰现金</span>
+                    <span class="status-value" id="cashDisplay">¥0</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">💳存款</span>
+                    <span class="status-value" id="bankDisplay">¥0</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">❤️健康</span>
+                    <span class="status-value" id="healthDisplay">100</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">📅天数</span>
+                    <span class="status-value" id="dayDisplay">1/40</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">📍位置</span>
+                    <span class="status-value" id="locationDisplay">--</span>
+                </div>
+            </div>
+
+            <!-- Horizontal Locations Row -->
+            <div class="locations-row" id="locationsList"></div>
+
+            <!-- Main Content Area -->
+            <div class="game-content">
+                <!-- Left Panel - Market -->
+                <div class="panel market-panel">
+                    <div class="panel-header-with-badge">
+                        <h3 class="panel-title">🏪 今日市场</h3>
+                        <span class="badge">正在营业</span>
+                    </div>
+                    <div class="list-header">
+                        <span>商品</span>
+                        <span class="text-right">当前价格</span>
+                        <span class="text-center">操作</span>
+                    </div>
+                    <div class="market-items" id="marketItems"></div>
+                </div>
+
+                <!-- Right Panel - Warehouse -->
+                <div class="panel warehouse-panel">
+                    <div class="panel-header-with-badge">
+                        <h3 class="panel-title">🎒 我的背包</h3>
+                        <span class="badge info" id="inventoryCountBadge">0/100</span>
+                    </div>
+                    <div class="list-header warehouse">
+                        <span>商品</span>
+                        <span class="text-right">持有/成本</span>
+                        <span class="text-right">现值/盈亏</span>
+                        <span class="text-center">操作</span>
+                    </div>
+                    <div class="warehouse-items" id="warehouseItems"></div>
+                    
+                    <div class="capacity-info-compact">
+                        <div class="capacity-bar-container">
+                            <div class="capacity-bar" id="capacityBar"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Action Bar (Combined) -->
+            <div class="bottom-bar">
+                <!-- Gameplay Actions -->
+                <div class="actions-group">
+                    <button class="bottom-btn action-btn" id="bankBtn" title="银行">💳 银行</button>
+                    <button class="bottom-btn action-btn" id="hospitalBtn" title="医院">🏥 医院</button>
+                    <button class="bottom-btn action-btn" id="rentalBtn" title="租房">🏠 租房</button>
+                    <button class="bottom-btn action-btn" id="internetBtn" title="网吧">💻 网吧</button>
+                    <button class="bottom-btn action-btn" id="newsBtn" title="新闻">📰 新闻</button>
+                    <button class="bottom-btn action-btn" id="diaryBtn" title="日记">📔 日记</button>
+                </div>
+                <!-- System Actions -->
+                <div class="system-group">
+                    <button class="bottom-btn" id="saveBtn">💾 保存</button>
+                    <button class="bottom-btn" id="settingsBtn">⚙️ 设置</button>
+                    <button class="bottom-btn danger" id="quitBtn">🚪 退出</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ranking Screen -->
+        <div id="rankingScreen" class="screen">
+            <div class="ranking-container">
+                <h2 class="screen-title">💰 财富排行榜</h2>
+                <div class="ranking-list" id="rankingList">
+                    <!-- Populated by JS -->
+                </div>
+                <button class="menu-btn" id="rankingBackBtn">返回</button>
+            </div>
+        </div>
+
+        <!-- About Screen -->
+        <div id="aboutScreen" class="screen">
+            <div class="about-container">
+                <h2 class="screen-title">ⓘ 关于游戏</h2>
+                <div class="about-content">
+                    <h3>北京浮生记 Web版</h3>
+                    <p>这是一款经典的模拟经营游戏，灵感来自90年代的DOS游戏《大富翁》和《上海滩》。</p>
+
+                    <h4>游戏目标</h4>
+                    <p>在限定的天数内，通过倒卖商品、应对随机事件，积累尽可能多的财富。</p>
+
+                    <h4>游戏玩法</h4>
+                    <ul>
+                        <li>在不同地点之间旅行，寻找商品的价格差异</li>
+                        <li>低价买入，高价卖出，赚取差价</li>
+                        <li>应对各种随机事件，既有机遇也有风险</li>
+                        <li>去银行存款以获得利息</li>
+                        <li>去医院治疗恢复健康</li>
+                        <li>租房增加背包容量</li>
+                    </ul>
+
+                    <h4>原作信息</h4>
+                    <p>原作者：Guo Xianghao (2000-2012)</p>
+                    <p>Web版本：2025</p>
+
+                    <h4>开源许可</h4>
+                    <p>本游戏基于原版开源代码重制</p>
+                </div>
+                <button class="menu-btn" id="aboutBackBtn">返回</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal System -->
+    <div id="modalOverlay" class="modal-overlay">
+        <div class="modal" id="modal">
+            <div class="modal-header">
+                <h3 id="modalTitle"></h3>
+                <button class="modal-close" id="modalClose">×</button>
+            </div>
+            <div class="modal-body" id="modalBody"></div>
+            <div class="modal-footer" id="modalFooter"></div>
+        </div>
+    </div>
+
+    <!-- Notification System -->
+    <div id="notificationContainer" class="notification-container"></div>
+
+    <!-- Main JavaScript Module -->
+    <script type="module" src="js/main.js?v=17"></script>
+</body>
+
+</html>
